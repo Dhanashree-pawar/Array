@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+int * fun(int n){
+    // int []  fun(int n) can also work, it specifies pointer pointing to an array
+int *p;
+p= (int *)malloc(n*sizeof(int));
+return(p);
+    
+}
+int main()
+{
+   int *x;
+   x = fun(5);
+    return 0;
+}
