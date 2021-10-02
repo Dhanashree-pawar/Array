@@ -1,0 +1,18 @@
+int fun (int A[], int n) //here A[] is an pointer to array and n is called by value
+        //(int *A, int n) can also work, its a general pointer
+{
+    int i;
+    for(i=0;i<n;i++){
+        cout<<A[i];
+       
+    } return 0;
+}
+
+// array can never be passed by value, only by address
+int main()
+{
+   int A[5]= {2,4,6,8,10};
+   fun(A,5);
+
+    return 0;
+}
