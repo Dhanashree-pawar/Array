@@ -1,0 +1,12 @@
+scalar var- simple var w data type which has only magnitud eis called as scalar var.
+vector var- collection of elements grouped together under same name i.e arrays
+
+arrays are supported by every lang
+if array not initialized, elememts will take garbage value
+int A[5]; -all garbage values
+int A[5] = {1,2,3,4,5}; - 5 blocks of memory is allocated
+int A[5] = {1,2}; -  rest other elements take value as 0
+int A[5] = {0}; - this will create an array of all elements as 0
+int A[] = {1,2,3,4,5,6,7}; - it will allocate 7 blocks of memory
+
+- cout<< A[2] is same as cout<< 2[A] is same as cout<< *(A+2)
