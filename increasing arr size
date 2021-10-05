@@ -1,0 +1,27 @@
+// in c lang size of arr must be defined at compile time and thr value must be a const, not a var in stack
+// in c++ we can create arr of any size at runtime and will be create din stack
+// arr size cant be modified once defined, atleast in stack, in heap it can be done by forming new arr
+// and hen transferrinf data from old arr to new one and then deleteing the old one
+//malloc will returnvoid type of pointer hecne we type cast it.
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+    int *p;
+    p= (int *) malloc(5*sizeof(int));
+    int *q;
+    q= new int [10];
+    for(int i=0;i<5;i++){
+        q[i]=p[i];
+    }
+    delete []p;
+    p=q;
+    q=NULL;
+    for(int z=0;z<5;z++){
+        cout<<p[z]<<endl;
+    }
+    return 0;
+}
