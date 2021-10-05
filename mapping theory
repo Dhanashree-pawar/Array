@@ -1,0 +1,10 @@
+matrix - m*n
+row major - address(A[i][j]) = Lo(base address) + [i*n + j] * w (size of data type)
+column major - address(A[i][j]) = Lo(base address) + [j*m + i] * w (size of data type)
+
+matrix n dimension A[d1][d2][d3][d4]
+row major - address(A[i1][i2][i3][i4]) = Lo + [i1*d2*d3*d4 + i2*d3*d4 + i3*d4 + i4] * w
+column major - address(A[i1][i2][i3][i4]) = Lo + [i4*d1*d2*d3 + i3*d1*d2 + i2*d1 + i1] * w
+
+row major- left to right
+colummn major - right to left
