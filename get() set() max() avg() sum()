@@ -1,0 +1,80 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+struct array{
+  
+    int *A;
+    int size;
+    int length;
+} arr;
+void display(struct array arr){
+    int i;
+    cout<<"elements are: ";
+    for(i=0;i<arr.length;i++){
+        cout<<arr.A[i]<<" ";
+    }
+}
+int get(struct array arr, int index){
+    if(index>=0 && index <arr.length){
+        return arr.A[index];
+    }
+    return -1;
+}
+void set(struct array *arr, int index, int num){
+    if(index>=0 && index <arr->length){
+        arr->A[index]= num;
+    }
+    
+}
+void swap(int *n1, int *n2){
+    int temp;
+    temp=*n1;
+    *n1=*n2;
+    *n2=temp;
+}
+int max(){
+    for(int i=0;i<arr.length;i++){
+        for(int j=i;j<arr.length;j++){
+            if (arr.A[i]>arr.A[j]) swap(&arr.A[i], &arr.A[j]);
+        }
+    }
+    return arr.A[arr.length-1];
+}
+//other method
+int mmax(){
+    int m=arr.A[0];
+    for(int i=1;i<arr.length;i++){
+        if (arr.A[i]>m) swap (m,arr.A[i]);// or just assign m=arr.A[i];
+    }
+    return m;
+}
+float avg(){
+    return (float)sum(arr)/arr.length;
+}
+int sum(){
+    int s=0;
+    for (int i=0;i<arr.length;i++){
+        s+= arr.A[i];
+    }return s;
+}
+int rsum(struct array arr, int n ){
+    if(n<0) return 0;
+    return rsum(arr, n-1)+arr.A[n];
+}
+int main()
+{  cout<<"enter size of array";
+    scanf("%d", &arr.size);//use &
+    arr.A = new int[arr.size];
+    cout<<"enter no of numbers";
+     scanf("%d", &arr.length);
+    int n= arr.length;
+    for (int i=0;i<n;i++){
+        scanf("%d", &arr.A[i]);
+    }
+  
+  
+ cout<<"sum is "<<rsum(arr, 5)<<endl;
+  display(arr);
+
+    return 0;
+}
